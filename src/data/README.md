@@ -18,3 +18,23 @@ Los archivos CSV utilizados por el proyecto no se almacenan en el repositorio.
 - Tipo de problema: clasificación multiclase
 - Clases utilizadas: 5, 6 y 7
 - Columna eliminada durante la limpieza: `Id`
+
+## Características seleccionadas
+
+La selección se ha realizado mediante `SelectKBest` con `f_classif`,
+ajustado exclusivamente sobre el conjunto de entrenamiento y con
+`random_state=42` para la división de los datos.
+
+### Breast Cancer Wisconsin
+
+1. 'concave points_mean'
+2. 'radius_worst'
+3. 'perimeter_worst'
+4. 'concave points_worst'
+
+### Wine Quality
+
+1. 'volatile acidity'
+2. 'citric acid'
+3. 'sulphates'
+4. 'alcohol'
