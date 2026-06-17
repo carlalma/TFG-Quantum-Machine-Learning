@@ -242,8 +242,32 @@ def train_classifier(
         else:
             epochs_without_improvement += 1
 
+        current_epoch = epoch_index + 1
+
+        if config.verbose and (
+            current_epoch == 1
+            or current_epoch % config.report_every == 0
+            or current_epoch == config.maximum_epochs
+        ):
+            print(
+                f"Epoch {current_epoch:03d}/"
+                f"{config.maximum_epochs:03d} | "
+                f"train_loss={training_loss:.6f} | "
+                f"validation_loss={validation_loss:.6f} | "
+                f"best_validation={best_validation_loss:.6f}",
+                flush=True,
+            )
+
         if epochs_without_improvement >= config.patience:
             stopped_early = True
+
+            if config.verbose:
+                print(
+                    "Early stopping activated at epoch "
+                    f"{current_epoch}. Best epoch: {best_epoch}.",
+                    flush=True,
+                )
+
             break
 
     if best_model_state is None:

@@ -14,6 +14,10 @@ class TrainingConfig:
     minimum_improvement: float = 1e-4
     seed: int = 42
 
+    """Aadir progreso visible """
+    verbose: bool = False
+    report_every: int = 1
+
     def __post_init__(self) -> None:
         """Valida los valores de configuración."""
         if self.maximum_epochs < 1:
@@ -39,4 +43,8 @@ class TrainingConfig:
         if self.minimum_improvement < 0:
             raise ValueError(
                 "minimum_improvement no puede ser negativo."
+            )
+        if self.report_every < 1:
+            raise ValueError(
+                "report_every debe ser mayor que cero."
             )
