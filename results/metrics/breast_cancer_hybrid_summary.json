@@ -1,0 +1,83 @@
+{
+    "dataset": "Breast Cancer Wisconsin",
+    "model": "hybrid quantum-classical classifier",
+    "number_of_runs": 5,
+    "split_seed": 42,
+    "training_seeds": [
+        42,
+        123,
+        456,
+        789,
+        2026
+    ],
+    "metrics": {
+        "accuracy": {
+            "mean": 0.976470588235294,
+            "standard_deviation": 1.2412670766236366e-16,
+            "minimum": 0.9764705882352941,
+            "maximum": 0.9764705882352941
+        },
+        "precision_malignant": {
+            "mean": 1.0,
+            "standard_deviation": 0.0,
+            "minimum": 1.0,
+            "maximum": 1.0
+        },
+        "recall_malignant": {
+            "mean": 0.9375,
+            "standard_deviation": 0.0,
+            "minimum": 0.9375,
+            "maximum": 0.9375
+        },
+        "f1_malignant": {
+            "mean": 0.967741935483871,
+            "standard_deviation": 0.0,
+            "minimum": 0.967741935483871,
+            "maximum": 0.967741935483871
+        },
+        "specificity_benign": {
+            "mean": 1.0,
+            "standard_deviation": 0.0,
+            "minimum": 1.0,
+            "maximum": 1.0
+        },
+        "best_validation_loss": {
+            "mean": 0.09354527087608243,
+            "standard_deviation": 0.0014968180165905744,
+            "minimum": 0.09204831915250157,
+            "maximum": 0.09594496105633238
+        },
+        "best_epoch": {
+            "mean": 95.6,
+            "standard_deviation": 3.9115214431215892,
+            "minimum": 91.0,
+            "maximum": 100.0
+        },
+        "training_time_seconds": {
+            "mean": 9954.456203499994,
+            "standard_deviation": 2365.9373624655805,
+            "minimum": 6242.3657166999765,
+            "maximum": 12678.603816299932
+        }
+    },
+    "summed_confusion_matrix": [
+        [
+            265,
+            0
+        ],
+        [
+            10,
+            150
+        ]
+    ],
+    "mean_confusion_matrix": [
+        [
+            53.0,
+            0.0
+        ],
+        [
+            2.0,
+            30.0
+        ]
+    ]
+}
