@@ -1,0 +1,92 @@
+{
+    "experiment": {
+        "name": "breast_cancer_hybrid_split_42_seed_789",
+        "dataset": "Breast Cancer Wisconsin",
+        "task": "binary classification",
+        "positive_class": {
+            "encoded_label": 1,
+            "original_label": "M",
+            "meaning": "malignant"
+        }
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 789
+    },
+    "dataset": {
+        "original_samples": 569,
+        "selected_features": [
+            "concave points_mean",
+            "radius_worst",
+            "perimeter_worst",
+            "concave points_worst"
+        ],
+        "partitions": {
+            "training": 399,
+            "validation": 85,
+            "test": 85
+        }
+    },
+    "model": {
+        "number_of_qubits": 4,
+        "number_of_variational_layers": 2,
+        "quantum_parameters": 16,
+        "classical_parameters": 5,
+        "total_trainable_parameters": 21
+    },
+    "training_configuration": {
+        "maximum_epochs": 100,
+        "batch_size": 16,
+        "learning_rate": 0.01,
+        "patience": 15,
+        "minimum_improvement": 0.0001,
+        "seed": 789,
+        "verbose": true,
+        "report_every": 1
+    },
+    "training_result": {
+        "best_epoch": 98,
+        "best_validation_loss": 0.09204831915250157,
+        "epochs_completed": 100,
+        "stopped_early": false
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.9764705882352941,
+            "precision_malignant": 1.0,
+            "recall_malignant": 0.9375,
+            "f1_malignant": 0.967741935483871,
+            "specificity_benign": 1.0,
+            "true_negatives": 53,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "true_positives": 30,
+            "number_of_samples": 85,
+            "classification_threshold": 0.5
+        },
+        "confusion_matrix": [
+            [
+                53,
+                0
+            ],
+            [
+                2,
+                30
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 10025.021097599994,
+        "evaluation": 0.2905043999198824,
+        "total": 10025.373018000042
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "qiskit": "2.4.2",
+        "qiskit_machine_learning": "0.9.0",
+        "torch": "2.12.0",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0"
+    }
+}
