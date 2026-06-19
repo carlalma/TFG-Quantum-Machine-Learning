@@ -1,0 +1,156 @@
+{
+    "dataset": "Wine Quality",
+    "model": "hybrid quantum-classical classifier",
+    "number_of_runs": 5,
+    "split_seed": 42,
+    "training_seeds": [
+        42,
+        123,
+        456,
+        789,
+        2026
+    ],
+    "classes": {
+        "0": 5,
+        "1": 6,
+        "2": 7
+    },
+    "metrics": {
+        "accuracy": {
+            "mean": 0.5411042944785276,
+            "standard_deviation": 0.007999021356076863,
+            "minimum": 0.5337423312883436,
+            "maximum": 0.5521472392638037
+        },
+        "precision_macro": {
+            "mean": 0.4987988748462134,
+            "standard_deviation": 0.006514025989663339,
+            "minimum": 0.49291293726887386,
+            "maximum": 0.5086623354989172
+        },
+        "recall_macro": {
+            "mean": 0.5738727858293076,
+            "standard_deviation": 0.012490927472171225,
+            "minimum": 0.5585382813643682,
+            "maximum": 0.5880361586883326
+        },
+        "f1_macro": {
+            "mean": 0.5045998445921084,
+            "standard_deviation": 0.004339395640534044,
+            "minimum": 0.5011923442397941,
+            "maximum": 0.5118810181500383
+        },
+        "best_validation_loss": {
+            "mean": 0.7262695047752988,
+            "standard_deviation": 0.007682821514820924,
+            "minimum": 0.7153441244107814,
+            "maximum": 0.7341191995363294
+        },
+        "best_epoch": {
+            "mean": 82.6,
+            "standard_deviation": 11.148990985734988,
+            "minimum": 69.0,
+            "maximum": 99.0
+        },
+        "epochs_completed": {
+            "mean": 94.6,
+            "standard_deviation": 6.767569726275452,
+            "minimum": 84.0,
+            "maximum": 100.0
+        },
+        "training_time_seconds": {
+            "mean": 10326.659937839955,
+            "standard_deviation": 913.0467698226978,
+            "minimum": 9509.288543799892,
+            "maximum": 11879.480229499983
+        },
+        "quality_5_precision": {
+            "mean": 0.6773245810645347,
+            "standard_deviation": 0.004858548667444781,
+            "minimum": 0.6707317073170732,
+            "maximum": 0.6835443037974683
+        },
+        "quality_5_recall": {
+            "mean": 0.7694444444444445,
+            "standard_deviation": 0.03197462342561481,
+            "minimum": 0.7361111111111112,
+            "maximum": 0.8194444444444444
+        },
+        "quality_5_f1": {
+            "mean": 0.7201806357946031,
+            "standard_deviation": 0.013507132023908278,
+            "minimum": 0.7066666666666667,
+            "maximum": 0.7421383647798742
+        },
+        "quality_6_precision": {
+            "mean": 0.46904850293168654,
+            "standard_deviation": 0.019919410574921845,
+            "minimum": 0.4473684210526316,
+            "maximum": 0.5
+        },
+        "quality_6_recall": {
+            "mean": 0.25217391304347825,
+            "standard_deviation": 0.024251015261857262,
+            "minimum": 0.21739130434782608,
+            "maximum": 0.2753623188405797
+        },
+        "quality_6_f1": {
+            "mean": 0.32712408560455686,
+            "standard_deviation": 0.019410481050694355,
+            "minimum": 0.30303030303030304,
+            "maximum": 0.3486238532110092
+        },
+        "quality_7_precision": {
+            "mean": 0.3500235405424189,
+            "standard_deviation": 0.012777603643143924,
+            "minimum": 0.3409090909090909,
+            "maximum": 0.37209302325581395
+        },
+        "quality_7_recall": {
+            "mean": 0.7,
+            "standard_deviation": 0.040655781409087106,
+            "minimum": 0.6363636363636364,
+            "maximum": 0.7272727272727273
+        },
+        "quality_7_f1": {
+            "mean": 0.46649481237716534,
+            "standard_deviation": 0.01822651139974748,
+            "minimum": 0.4444444444444444,
+            "maximum": 0.49230769230769234
+        }
+    },
+    "summed_confusion_matrix": [
+        [
+            277,
+            70,
+            13
+        ],
+        [
+            128,
+            87,
+            130
+        ],
+        [
+            4,
+            29,
+            77
+        ]
+    ],
+    "mean_confusion_matrix": [
+        [
+            55.4,
+            14.0,
+            2.6
+        ],
+        [
+            25.6,
+            17.4,
+            26.0
+        ],
+        [
+            0.8,
+            5.8,
+            15.4
+        ]
+    ]
+}

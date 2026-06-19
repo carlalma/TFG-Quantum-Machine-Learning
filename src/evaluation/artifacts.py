@@ -121,15 +121,27 @@ def plot_confusion_matrix(
     matrix: np.ndarray,
     output_path: str | Path,
     *,
-    class_names: tuple[str, str] = (
+    class_names: tuple[str, ...] = (
         "Benign",
         "Malignant",
     ),
+    title: str = "Test confusion matrix",
 ) -> None:
-    """Genera una matriz de confusión binaria."""
-    if matrix.shape != (2, 2):
+    """Genera una matriz de confusión para cualquier número de clases."""
+    number_of_classes = len(class_names)
+
+    if number_of_classes < 2:
         raise ValueError(
-            "La matriz de confusión debe tener forma (2, 2)."
+            "La matriz necesita al menos dos clases."
+        )
+
+    if matrix.shape != (
+        number_of_classes,
+        number_of_classes,
+    ):
+        raise ValueError(
+            "La forma de la matriz no coincide con "
+            "el número de nombres de clase."
         )
 
     path = Path(output_path)
@@ -150,22 +162,26 @@ def plot_confusion_matrix(
         ax=axis,
     )
 
+    tick_positions = list(
+        range(number_of_classes)
+    )
+
     axis.set_xticks(
-        [0, 1],
+        tick_positions,
         labels=class_names,
     )
 
     axis.set_yticks(
-        [0, 1],
+        tick_positions,
         labels=class_names,
     )
 
     axis.set_xlabel("Predicted class")
     axis.set_ylabel("True class")
-    axis.set_title("Test confusion matrix")
+    axis.set_title(title)
 
-    for row_index in range(2):
-        for column_index in range(2):
+    for row_index in range(number_of_classes):
+        for column_index in range(number_of_classes):
             axis.text(
                 column_index,
                 row_index,

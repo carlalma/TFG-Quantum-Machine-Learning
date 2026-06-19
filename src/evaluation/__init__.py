@@ -10,10 +10,16 @@ from .binary import (
     BinaryEvaluationResult,
     evaluate_binary_classifier,
 )
+from .multiclass import (
+    MulticlassEvaluationResult,
+    evaluate_multiclass_classifier,
+)
 
 __all__ = [
     "BinaryEvaluationResult",
+    "MulticlassEvaluationResult",
     "evaluate_binary_classifier",
+    "evaluate_multiclass_classifier",
     "plot_confusion_matrix",
     "plot_training_history",
     "save_experiment_summary",
