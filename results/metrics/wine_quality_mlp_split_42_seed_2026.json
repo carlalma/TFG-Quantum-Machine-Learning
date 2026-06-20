@@ -1,0 +1,108 @@
+{
+    "experiment": {
+        "name": "wine_quality_mlp_split_42_seed_2026",
+        "dataset": "wine_quality",
+        "model": "mlp",
+        "task": "multiclass"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 2026
+    },
+    "dataset": {
+        "samples": 1088,
+        "selected_features": [
+            "volatile acidity",
+            "citric acid",
+            "sulphates",
+            "alcohol"
+        ],
+        "partitions": {
+            "training": 762,
+            "validation": 163,
+            "test": 163
+        }
+    },
+    "model": {
+        "trainable_parameters": 35,
+        "architecture": "4-4-output"
+    },
+    "training_result": {
+        "training_method": "PyTorch and Adam",
+        "configuration": {
+            "maximum_epochs": 100,
+            "batch_size": 16,
+            "learning_rate": 0.01,
+            "patience": 15,
+            "minimum_improvement": 0.0001,
+            "seed": 2026,
+            "verbose": true,
+            "report_every": 10
+        },
+        "best_epoch": 18,
+        "best_validation_loss": 0.7206169410717268,
+        "epochs_completed": 33,
+        "stopped_early": true
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.5460122699386503,
+            "precision_macro": 0.4983478855711974,
+            "recall_macro": 0.5732872200263505,
+            "f1_macro": 0.5059256831624452,
+            "number_of_samples": 163
+        },
+        "per_class_metrics": {
+            "quality_5": {
+                "encoded_label": 0,
+                "precision": 0.6867469879518072,
+                "recall": 0.7916666666666666,
+                "f1": 0.7354838709677419,
+                "support": 72
+            },
+            "quality_6": {
+                "encoded_label": 1,
+                "precision": 0.4594594594594595,
+                "recall": 0.2463768115942029,
+                "f1": 0.32075471698113206,
+                "support": 69
+            },
+            "quality_7": {
+                "encoded_label": 2,
+                "precision": 0.3488372093023256,
+                "recall": 0.6818181818181818,
+                "f1": 0.46153846153846156,
+                "support": 22
+            }
+        },
+        "confusion_matrix": [
+            [
+                57,
+                13,
+                2
+            ],
+            [
+                26,
+                17,
+                26
+            ],
+            [
+                0,
+                7,
+                15
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 1.91643390012905,
+        "evaluation": 0.009444799972698092,
+        "total": 2.518428900046274
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}

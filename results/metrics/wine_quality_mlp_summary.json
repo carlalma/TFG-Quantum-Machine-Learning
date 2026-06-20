@@ -1,0 +1,63 @@
+{
+    "dataset": "Wine Quality",
+    "model": "classical MLP",
+    "number_of_runs": 5,
+    "split_seed": 42,
+    "training_seeds": [
+        42,
+        123,
+        456,
+        789,
+        2026
+    ],
+    "metrics": {
+        "accuracy": {
+            "mean": 0.5423312883435583,
+            "standard_deviation": 0.011959256864796278,
+            "minimum": 0.5276073619631901,
+            "maximum": 0.558282208588957
+        },
+        "precision_macro": {
+            "mean": 0.5022537053369129,
+            "standard_deviation": 0.00967288888418976,
+            "minimum": 0.4935684470568191,
+            "maximum": 0.5141665138455895
+        },
+        "recall_macro": {
+            "mean": 0.5772251500512371,
+            "standard_deviation": 0.011577334874871488,
+            "minimum": 0.5644305372566242,
+            "maximum": 0.5932696530522618
+        },
+        "f1_macro": {
+            "mean": 0.5129428298392178,
+            "standard_deviation": 0.009815796668360643,
+            "minimum": 0.5035158235158236,
+            "maximum": 0.5250514456121932
+        },
+        "best_epoch": {
+            "mean": 31.8,
+            "standard_deviation": 25.65540878645281,
+            "minimum": 7.0,
+            "maximum": 66.0
+        },
+        "best_validation_loss": {
+            "mean": 0.7263610808395902,
+            "standard_deviation": 0.013774688283244135,
+            "minimum": 0.7084600962012824,
+            "maximum": 0.7463211874289015
+        },
+        "epochs_completed": {
+            "mean": 46.8,
+            "standard_deviation": 25.655408786452806,
+            "minimum": 22.0,
+            "maximum": 81.0
+        },
+        "training_time_seconds": {
+            "mean": 2.3863936000037937,
+            "standard_deviation": 0.8194581386026841,
+            "minimum": 1.6082830000668764,
+            "maximum": 3.4518875998910517
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "experiment": {
+        "name": "breast_cancer_mlp_split_42_seed_2026",
+        "dataset": "breast_cancer",
+        "model": "mlp",
+        "task": "binary"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 2026
+    },
+    "dataset": {
+        "samples": 569,
+        "selected_features": [
+            "concave points_mean",
+            "radius_worst",
+            "perimeter_worst",
+            "concave points_worst"
+        ],
+        "partitions": {
+            "training": 399,
+            "validation": 85,
+            "test": 85
+        }
+    },
+    "model": {
+        "trainable_parameters": 25,
+        "architecture": "4-4-output"
+    },
+    "training_result": {
+        "training_method": "PyTorch and Adam",
+        "configuration": {
+            "maximum_epochs": 100,
+            "batch_size": 16,
+            "learning_rate": 0.01,
+            "patience": 15,
+            "minimum_improvement": 0.0001,
+            "seed": 2026,
+            "verbose": true,
+            "report_every": 10
+        },
+        "best_epoch": 49,
+        "best_validation_loss": 0.09181483775473145,
+        "epochs_completed": 64,
+        "stopped_early": true
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.9529411764705882,
+            "precision_malignant": 0.9666666666666667,
+            "recall_malignant": 0.90625,
+            "f1_malignant": 0.9354838709677419,
+            "specificity_benign": 0.9811320754716981,
+            "true_negatives": 52,
+            "false_positives": 1,
+            "false_negatives": 3,
+            "true_positives": 29,
+            "number_of_samples": 85,
+            "classification_threshold": 0.5
+        },
+        "per_class_metrics": null,
+        "confusion_matrix": [
+            [
+                52,
+                1
+            ],
+            [
+                3,
+                29
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 1.9160549000371248,
+        "evaluation": 0.004930000053718686,
+        "total": 2.471095100045204
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}
