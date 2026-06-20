@@ -250,3 +250,35 @@ def test_multiclass_training_uses_weighted_loss() -> None:
 
     assert 1 <= result.epochs_completed <= 5
     assert np.isfinite(result.best_validation_loss)
+
+def test_data_loaders_can_use_classical_features() -> None:
+        """Comprueba la selección de la rama clásica."""
+        prepared = create_prepared_dataset(
+            multiclass=False
+        )
+
+        prepared.X_train_classical = np.full(
+            prepared.X_train_classical.shape,
+            fill_value=-2.0,
+            dtype=np.float64,
+        )
+
+        prepared.X_train_quantum = np.full(
+            prepared.X_train_quantum.shape,
+            fill_value=2.0,
+            dtype=np.float64,
+        )
+
+        data_loaders = create_training_data_loaders(
+            prepared,
+            task="binary",
+            batch_size=16,
+            seed=42,
+            feature_representation="classical",
+        )
+
+        input_batch, _ = next(
+            iter(data_loaders.train)
+        )
+
+        assert torch.all(input_batch == -2.0)

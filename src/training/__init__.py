@@ -4,6 +4,7 @@ from .config import TrainingConfig
 from .data import (
     ClassificationTask,
     TrainingDataLoaders,
+    FeatureRepresentation,
     create_training_data_loaders,
 )
 from .trainer import (
@@ -26,4 +27,5 @@ __all__ = [
     "create_training_data_loaders",
     "fit_classifier",
     "train_classifier",
+    "FeatureRepresentation",
 ]

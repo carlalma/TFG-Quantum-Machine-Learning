@@ -10,7 +10,11 @@ from torch.utils.data import DataLoader, TensorDataset
 from src.data import PreparedDataset
 
 
-ClassificationTask = Literal["binary", "multiclass"]
+ClassificationTask = Literal["binary", "multiclass"] 
+FeatureRepresentation = Literal[
+    "quantum",
+    "classical",
+]
 
 
 @dataclass(frozen=True)
@@ -69,32 +73,66 @@ def create_training_data_loaders(
     task: ClassificationTask,
     batch_size: int = 16,
     seed: int = 42,
+    feature_representation: FeatureRepresentation = "quantum",
 ) -> TrainingDataLoaders:
     """
     Crea los cargadores utilizados durante el entrenamiento.
 
-    La rama cuántica utiliza las cuatro características escaladas
-    al intervalo angular [0, pi].
+    La representación cuántica utiliza características escaladas
+    a [0, pi]. La representación clásica utiliza características
+    estandarizadas.
     """
     if batch_size < 1:
         raise ValueError(
             "batch_size debe ser mayor que cero."
         )
 
+    if feature_representation == "quantum":
+        training_features = (
+            prepared_dataset.X_train_quantum
+        )
+
+        validation_features = (
+            prepared_dataset.X_validation_quantum
+        )
+
+        test_features = (
+            prepared_dataset.X_test_quantum
+        )
+
+    elif feature_representation == "classical":
+        training_features = (
+            prepared_dataset.X_train_classical
+        )
+
+        validation_features = (
+            prepared_dataset.X_validation_classical
+        )
+
+        test_features = (
+            prepared_dataset.X_test_classical
+        )
+
+    else:
+        raise ValueError(
+            "La representación debe ser "
+            "'quantum' o 'classical'."
+        )
+
     train_dataset = _create_tensor_dataset(
-        prepared_dataset.X_train_quantum,
+        training_features,
         prepared_dataset.y_train,
         task=task,
     )
 
     validation_dataset = _create_tensor_dataset(
-        prepared_dataset.X_validation_quantum,
+        validation_features,
         prepared_dataset.y_validation,
         task=task,
     )
 
     test_dataset = _create_tensor_dataset(
-        prepared_dataset.X_test_quantum,
+        test_features,
         prepared_dataset.y_test,
         task=task,
     )
