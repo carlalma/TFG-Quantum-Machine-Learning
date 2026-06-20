@@ -1,0 +1,106 @@
+{
+    "experiment": {
+        "name": "wine_quality_rbf_svm_split_42_seed_42",
+        "dataset": "wine_quality",
+        "model": "rbf_svm",
+        "task": "multiclass"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 42
+    },
+    "dataset": {
+        "samples": 1088,
+        "selected_features": [
+            "volatile acidity",
+            "citric acid",
+            "sulphates",
+            "alcohol"
+        ],
+        "partitions": {
+            "training": 762,
+            "validation": 163,
+            "test": 163
+        }
+    },
+    "model": {
+        "support_vectors": 627,
+        "support_vectors_per_class": [
+            242,
+            315,
+            70
+        ],
+        "fit_status": 0
+    },
+    "training_result": {
+        "training_method": "scikit-learn estimator",
+        "support_vectors": 627,
+        "support_vectors_per_class": [
+            242,
+            315,
+            70
+        ],
+        "fit_status": 0
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.5398773006134969,
+            "precision_macro": 0.5069507864028412,
+            "recall_macro": 0.5799846288976724,
+            "f1_macro": 0.5164937562640518,
+            "number_of_samples": 163
+        },
+        "per_class_metrics": {
+            "quality_5": {
+                "encoded_label": 0,
+                "precision": 0.6986301369863014,
+                "recall": 0.7083333333333334,
+                "f1": 0.7034482758620689,
+                "support": 72
+            },
+            "quality_6": {
+                "encoded_label": 1,
+                "precision": 0.4666666666666667,
+                "recall": 0.30434782608695654,
+                "f1": 0.3684210526315789,
+                "support": 69
+            },
+            "quality_7": {
+                "encoded_label": 2,
+                "precision": 0.35555555555555557,
+                "recall": 0.7272727272727273,
+                "f1": 0.47761194029850745,
+                "support": 22
+            }
+        },
+        "confusion_matrix": [
+            [
+                51,
+                18,
+                3
+            ],
+            [
+                22,
+                21,
+                26
+            ],
+            [
+                0,
+                6,
+                16
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 0.010797499911859632,
+        "evaluation": 0.01330940006300807,
+        "total": 0.3543479999061674
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}

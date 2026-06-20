@@ -1,0 +1,100 @@
+{
+    "experiment": {
+        "name": "wine_quality_logistic_regression_split_42_seed_42",
+        "dataset": "wine_quality",
+        "model": "logistic_regression",
+        "task": "multiclass"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 42
+    },
+    "dataset": {
+        "samples": 1088,
+        "selected_features": [
+            "volatile acidity",
+            "citric acid",
+            "sulphates",
+            "alcohol"
+        ],
+        "partitions": {
+            "training": 762,
+            "validation": 163,
+            "test": 163
+        }
+    },
+    "model": {
+        "coefficient_parameters": 15,
+        "iterations": [
+            10
+        ]
+    },
+    "training_result": {
+        "training_method": "scikit-learn estimator",
+        "coefficient_parameters": 15,
+        "iterations": [
+            10
+        ]
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.5214723926380368,
+            "precision_macro": 0.47992159816161206,
+            "recall_macro": 0.565089298784951,
+            "f1_macro": 0.49054680360725095,
+            "number_of_samples": 163
+        },
+        "per_class_metrics": {
+            "quality_5": {
+                "encoded_label": 0,
+                "precision": 0.6708860759493671,
+                "recall": 0.7361111111111112,
+                "f1": 0.7019867549668874,
+                "support": 72
+            },
+            "quality_6": {
+                "encoded_label": 1,
+                "precision": 0.42105263157894735,
+                "recall": 0.2318840579710145,
+                "f1": 0.29906542056074764,
+                "support": 69
+            },
+            "quality_7": {
+                "encoded_label": 2,
+                "precision": 0.34782608695652173,
+                "recall": 0.7272727272727273,
+                "f1": 0.47058823529411764,
+                "support": 22
+            }
+        },
+        "confusion_matrix": [
+            [
+                53,
+                16,
+                3
+            ],
+            [
+                26,
+                16,
+                27
+            ],
+            [
+                0,
+                6,
+                16
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 0.004022200126200914,
+        "evaluation": 0.004563600057736039,
+        "total": 0.35887930006720126
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}

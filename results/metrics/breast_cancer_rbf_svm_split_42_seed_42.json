@@ -1,0 +1,80 @@
+{
+    "experiment": {
+        "name": "breast_cancer_rbf_svm_split_42_seed_42",
+        "dataset": "breast_cancer",
+        "model": "rbf_svm",
+        "task": "binary"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 42
+    },
+    "dataset": {
+        "samples": 569,
+        "selected_features": [
+            "concave points_mean",
+            "radius_worst",
+            "perimeter_worst",
+            "concave points_worst"
+        ],
+        "partitions": {
+            "training": 399,
+            "validation": 85,
+            "test": 85
+        }
+    },
+    "model": {
+        "support_vectors": 76,
+        "support_vectors_per_class": [
+            36,
+            40
+        ],
+        "fit_status": 0
+    },
+    "training_result": {
+        "training_method": "scikit-learn estimator",
+        "support_vectors": 76,
+        "support_vectors_per_class": [
+            36,
+            40
+        ],
+        "fit_status": 0
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.9647058823529412,
+            "precision_malignant": 1.0,
+            "recall_malignant": 0.90625,
+            "f1_malignant": 0.9508196721311475,
+            "specificity_benign": 1.0,
+            "true_negatives": 53,
+            "false_positives": 0,
+            "false_negatives": 3,
+            "true_positives": 29,
+            "number_of_samples": 85
+        },
+        "per_class_metrics": null,
+        "confusion_matrix": [
+            [
+                53,
+                0
+            ],
+            [
+                3,
+                29
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 0.015207999851554632,
+        "evaluation": 0.0056126001290977,
+        "total": 0.3399628000333905
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}

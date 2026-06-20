@@ -1,0 +1,76 @@
+{
+    "experiment": {
+        "name": "breast_cancer_logistic_regression_split_42_seed_42",
+        "dataset": "breast_cancer",
+        "model": "logistic_regression",
+        "task": "binary"
+    },
+    "random_seeds": {
+        "dataset_split": 42,
+        "model_and_training": 42
+    },
+    "dataset": {
+        "samples": 569,
+        "selected_features": [
+            "concave points_mean",
+            "radius_worst",
+            "perimeter_worst",
+            "concave points_worst"
+        ],
+        "partitions": {
+            "training": 399,
+            "validation": 85,
+            "test": 85
+        }
+    },
+    "model": {
+        "coefficient_parameters": 5,
+        "iterations": [
+            11
+        ]
+    },
+    "training_result": {
+        "training_method": "scikit-learn estimator",
+        "coefficient_parameters": 5,
+        "iterations": [
+            11
+        ]
+    },
+    "test_results": {
+        "metrics": {
+            "accuracy": 0.9764705882352941,
+            "precision_malignant": 1.0,
+            "recall_malignant": 0.9375,
+            "f1_malignant": 0.967741935483871,
+            "specificity_benign": 1.0,
+            "true_negatives": 53,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "true_positives": 30,
+            "number_of_samples": 85
+        },
+        "per_class_metrics": null,
+        "confusion_matrix": [
+            [
+                53,
+                0
+            ],
+            [
+                2,
+                30
+            ]
+        ]
+    },
+    "execution_times_seconds": {
+        "training": 0.004392899805679917,
+        "evaluation": 0.004350499948486686,
+        "total": 0.32751389988698065
+    },
+    "software_environment": {
+        "python": "3.14.6",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "scikit_learn": "1.9.0",
+        "torch": "2.12.0"
+    }
+}
