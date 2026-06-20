@@ -14,6 +14,11 @@ from .multiclass import (
     MulticlassEvaluationResult,
     evaluate_multiclass_classifier,
 )
+from .classical import (
+    ClassicalEvaluationResult,
+    evaluate_classical_binary_classifier,
+    evaluate_classical_multiclass_classifier,
+)
 
 __all__ = [
     "BinaryEvaluationResult",
@@ -24,4 +29,7 @@ __all__ = [
     "plot_training_history",
     "save_experiment_summary",
     "save_training_history",
+    "ClassicalEvaluationResult",
+    "evaluate_classical_binary_classifier",
+    "evaluate_classical_multiclass_classifier",
 ]
