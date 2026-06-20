@@ -63,7 +63,6 @@ def build_rbf_svm(
         gamma="scale",
         class_weight=_get_class_weight(task),
         decision_function_shape="ovr",
-        probability=False,
         random_state=seed,
     )
 

@@ -33,27 +33,38 @@ def _create_tensor_dataset(
     task: ClassificationTask,
 ) -> TensorDataset:
     """Convierte características y etiquetas en tensores."""
-    feature_tensor = torch.as_tensor(
+    feature_array = np.array(
         features,
-        dtype=torch.float32,
+        dtype=np.float32,
+        copy=True,
+    )
+
+    feature_tensor = torch.from_numpy(
+        feature_array
     )
 
     if task == "binary":
-        target_tensor = torch.as_tensor(
+        target_array = np.array(
             targets,
-            dtype=torch.float32,
+            dtype=np.float32,
+            copy=True,
         ).reshape(-1, 1)
 
     elif task == "multiclass":
-        target_tensor = torch.as_tensor(
+        target_array = np.array(
             targets,
-            dtype=torch.int64,
+            dtype=np.int64,
+            copy=True,
         ).reshape(-1)
 
     else:
         raise ValueError(
             f"Tipo de clasificación no reconocido: {task}"
         )
+
+    target_tensor = torch.from_numpy(
+        target_array
+    )
 
     if len(feature_tensor) != len(target_tensor):
         raise ValueError(
@@ -65,7 +76,6 @@ def _create_tensor_dataset(
         feature_tensor,
         target_tensor,
     )
-
 
 def create_training_data_loaders(
     prepared_dataset: PreparedDataset,
