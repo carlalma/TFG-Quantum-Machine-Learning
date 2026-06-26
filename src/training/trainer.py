@@ -19,6 +19,7 @@ from .data import (
     ClassificationTask,
     TrainingDataLoaders,
     create_training_data_loaders,
+    FeatureRepresentation,
 )
 
 
@@ -292,6 +293,7 @@ def fit_classifier(
     prepared_dataset: PreparedDataset,
     *,
     config: TrainingConfig | None = None,
+    feature_representation: FeatureRepresentation = "quantum",
 ) -> tuple[TrainingResult, TrainingDataLoaders]:
     """
     Prepara los datos y entrena un clasificador binario o multiclase.
@@ -326,6 +328,7 @@ def fit_classifier(
         task=task,
         batch_size=training_config.batch_size,
         seed=training_config.seed,
+        feature_representation=feature_representation,
     )
 
     loss_function = build_loss_function(
