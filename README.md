@@ -223,20 +223,17 @@ The current test suite validates:
 * [x] Four-qubit angle encoding circuit.
 * [x] Two-layer variational ansatz.
 * [x] Circular CNOT entanglement.
-* [x] Automated tests for data and circuit components.
-
-### Pending
-
-* [ ] Definition of Pauli-(Z) observables.
-* [ ] Construction of the quantum neural network.
-* [ ] Integration with the classical output layer.
-* [ ] Binary hybrid classifier.
-* [ ] Multiclass hybrid classifier.
-* [ ] Joint quantum-classical training.
-* [ ] Early stopping and experiment tracking.
-* [ ] Classical baseline models.
-* [ ] Final evaluation and comparison.
-* [ ] Generation of figures and result tables.
+* [x] Automated tests for data and circuit components
+* [x] Definition of Pauli-(Z) observables.
+* [x] Construction of the quantum neural network.
+* [x] Integration with the classical output layer.
+* [x] Binary hybrid classifier.
+* [x] Multiclass hybrid classifier.
+* [x] Joint quantum-classical training.
+* [x] Early stopping and experiment tracking.
+* [x] Classical baseline models.
+* [x] Final evaluation and comparison.
+* [x] Generation of figures and result tables.
 
 ## Technologies
 
@@ -262,6 +259,61 @@ The project uses controlled random seeds for:
 * Experimental repetitions.
 
 The training, validation and test partitions will remain identical across the hybrid and classical models to ensure a fair comparison.
+
+
+## Running the experiments
+
+All commands must be executed from the project root.
+
+### Hybrid binary classification
+
+```bash
+python experiments/run_breast_cancer.py --seed 42 --split-seed 42
+
+### Hybrid multiclass classification
+
+python experiments/run_wine_quality.py --seed 42 --split-seed 42
+
+### Classical baselines
+
+The supported models are logistic_regression, rbf_svm and mlp.
+
+python experiments/run_classical_baseline.py \
+  --dataset breast_cancer \
+  --model logistic_regression \
+  --seed 42 \
+  --split-seed 42
+python experiments/run_classical_baseline.py \
+  --dataset wine_quality \
+  --model rbf_svm \
+  --seed 42 \
+  --split-seed 42
+
+### Result summaries
+python experiments/summarize_breast_cancer.py
+python experiments/summarize_wine_quality.py
+python experiments/summarize_classical_baselines.py
+
+### Quantum circuit figure
+python experiments/draw_quantum_circuit.py
+
+Los parámetros `--dataset`, `--model`, `--seed` y `--split-seed` corresponden a los que admite actualmente el ejecutor de modelos clásicos; `run_wine_quality.py` también admite las semillas y parámetros de entrenamiento documentados. :contentReference[oaicite:10]{index=10}
+
+
+## Example results
+
+<p align="center">
+  <img
+    src="results/figures/breast_cancer_hybrid_split_42_seed_42_confusion.png"
+    width="46%"
+    alt="Breast Cancer confusion matrix"
+  />
+  <img
+    src="results/figures/wine_quality_hybrid_split_42_seed_42_confusion.png"
+    width="46%"
+    alt="Wine Quality confusion matrix"
+  />
+</p>
 
 ## Author
 
