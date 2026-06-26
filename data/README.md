@@ -4,7 +4,7 @@ Los archivos CSV utilizados por el proyecto no se almacenan en el repositorio.
 
 ## Breast Cancer Wisconsin
 
-- Fuente: Kaggle
+- Fuente: Kaggle https://www.kaggle.com/datasets/mragpavank/breast-cancer
 - Archivo local: `data/raw/breast_cancer.csv`
 - Variable objetivo: `diagnosis`
 - Tipo de problema: clasificación binaria
@@ -12,7 +12,7 @@ Los archivos CSV utilizados por el proyecto no se almacenan en el repositorio.
 
 ## Wine Quality
 
-- Fuente: Kaggle
+- Fuente: Kaggle  https://www.kaggle.com/datasets/yasserh/wine-quality-dataset
 - Archivo local: `data/raw/wine_quality.csv`
 - Variable objetivo: `quality`
 - Tipo de problema: clasificación multiclase
